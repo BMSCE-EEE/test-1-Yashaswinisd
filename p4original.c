@@ -1,21 +1,31 @@
 #include<stdio.h>
-void input_two_numbers(int*a,int*b)
-{
-  printf("enter two numbers\n");
-  scanf("%d%d",a,b);
-}
-void find_sum(int a,int b,int*sum)
-{
-  *sum=a+b;
-}
-void output(int a,int b,int c)
-{
-  printf("sum of %d+%d is %d",a,b,c);
-}
+float input();
+float large ( float a,float b, float c);
+void display(float max);
 int main()
 {
-  int x,y,z;
-  input_two_numbers(&x,&y);
-  find_sum(x,y,&z);
-  output(x,y,z);
+  float x, y,z, largest;
+  x= input();
+  y=input();
+  z=input();
+  largest =large(x, y,z);
+  display(largest);
+  return 0;
+} 
+float input()
+{
+  float n;
+  printf("enter number\n:");
+  scanf("%f ",&n);
+  return n;
+}
+float large (float a,float b ,float c)
+{
+  if (a>=b && a>c) return a;
+  else if (b>=a && b>=c)return c;
+  else return c;
+}
+void display (float max)
+{
+  printf("largest number = %.2f",max);
 }
