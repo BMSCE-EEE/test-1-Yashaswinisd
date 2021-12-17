@@ -1,8 +1,20 @@
 #include <stdio.h>
-float input()
+int gcd(int a,int b ,int t)
 {
-  int a,b;
-  printf("enter the number");
-  scanf("%d ",a );
-  
+  while(b>0)
+  {
+    t=b;
+    b=a%b;
+    a=t;
+  }
+  return a;
+}
+int sum_of_digits(int a)
+{
+  int sum=0;
+  while(a!=0){
+    sum+=a%10;
+    a/=10;
+  }
+  return sum;
 }
